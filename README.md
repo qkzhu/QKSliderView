@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/QKSliderView.svg?style=flat)](https://cocoapods.org/pods/QKSliderView)
 [![License](https://img.shields.io/cocoapods/l/QKSliderView.svg?style=flat)](https://cocoapods.org/pods/QKSliderView)
 [![Platform](https://img.shields.io/cocoapods/p/QKSliderView.svg?style=flat)](https://cocoapods.org/pods/QKSliderView)
-[![中文 README](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat)](https://github.com/qkzhu/QKSliderViewTemp/blob/master/README.zh-cn.md)
+[![中文 README](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat)](https://github.com/qkzhu/QKSliderView/blob/master/README.zh-cn.md)
 
 ## Preview
 <img src="https://github.com/qkzhu/QKSliderViewTemp/blob/master/images/demo.gif" width="222" height="480"/>

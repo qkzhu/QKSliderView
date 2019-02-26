@@ -33,7 +33,7 @@ pod 'QKSliderView'
 let sliderView = QKSliderView(rows: 2, columns: 2, cellGapH: 8, cellGapV: 4, cellRemainWidth: 8)
 sliderView.dataSource = self //UICollectionViewDataSource
 self.view.addSubview(sliderView)
-// then add constraints or adjust frame
+// 然后加constraints或者调整frame
 ```
 
 ### 变量参考图
