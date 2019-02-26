@@ -1,10 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'QKSliderView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'An UICollectionView that displays a small portion of previous and next page on the screen.'
 
   s.homepage         = 'https://github.com/qkzhu/QKSliderView'
-  s.screenshots     = 'https://github.com/qkzhu/QKSliderView/blob/master/images/demo.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'qiankun' => 'lastencent@gmail.com' }
   s.source           = { :git => 'https://github.com/qkzhu/QKSliderView.git', :tag => s.version.to_s }
