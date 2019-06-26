@@ -139,6 +139,7 @@
 				TargetAttributes = {
 					F7D423EF2221A1E900797C7B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -338,7 +339,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.qksliderview.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -357,7 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.qksliderview.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
