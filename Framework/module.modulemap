@@ -1,0 +1,5 @@
+framework module QKSliderView {
+    umbrella header "Framework.h"
+    export *
+    module * { export * }
+}

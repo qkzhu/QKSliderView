@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/QKSliderView.svg?style=flat)](https://cocoapods.org/pods/QKSliderView)
 
 ## 预览
-<img src="images/demo.gif" width="222" height="480"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/demo.gif" width="222" height="480"/>
 
 ## 运行范例
 
@@ -24,9 +24,9 @@ pod 'QKSliderView'
 ### 用storyboard创建
 1. 拖一个 `UICollectionView` 进storyboard。
 2. 把 class 换成 `QKSliderView`。
-<img src="images/class.png"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/class.png"/>
 3. 输入水平间距，垂直间距，行数，列数等信息。
-<img src="images/config.png"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/config.png"/>
 
 ### 用代码创建
 ```Swift
@@ -37,7 +37,7 @@ self.view.addSubview(sliderView)
 ```
 
 ### 变量参考图
-<img src="images/explain.png" width="310" height="672"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/explain.png" width="310" height="672"/>
 
 ## 作者
 

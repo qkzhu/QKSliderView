@@ -31,10 +31,8 @@
                   numberOfColumnsPerPage:(NSInteger)columns
                                 cellGapH:(CGFloat)gapH
                                 cellGapV:(CGFloat)gapV
-                         cellRemainWidth:(CGFloat)remainWidth
-{
-    if (self = [super init])
-    {
+                         cellRemainWidth:(CGFloat)remainWidth {
+    if (self = [super init]) {
         self.rows = rows < 1 ? QKSLIDER_DEFAULT_ROWS : rows;
         self.columns = columns < 1 ? QKSLIDER_DEFAULT_COLUMNS : columns;
         self.cellGapH = gapH < 0 ? QKSLIDER_DEFAULT_GAP_H : gapH;
@@ -45,8 +43,7 @@
     return self;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     // using default value for all settings
     return [self initWithNumOfRowsPerPage:QKSLIDER_DEFAULT_ROWS
                    numberOfColumnsPerPage:QKSLIDER_DEFAULT_COLUMNS
@@ -55,8 +52,7 @@
                           cellRemainWidth:QKSLIDER_DEFAULT_REMAINDER_WIDTH];
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder])
     {
         self.rows = QKSLIDER_DEFAULT_ROWS;
@@ -71,20 +67,17 @@
 
 
 #pragma mark - setter
-- (void)setRows:(NSInteger)rows
-{
+- (void)setRows:(NSInteger)rows {
     _rows = rows < 1 ? QKSLIDER_DEFAULT_ROWS : rows;
 }
 
-- (void)setColumns:(NSInteger)columns
-{
+- (void)setColumns:(NSInteger)columns {
     _columns = columns < 1 ? QKSLIDER_DEFAULT_COLUMNS : columns;
 }
 
 
 #pragma mark - overriding
-- (void)prepareLayout
-{
+- (void)prepareLayout {
     if (!self.collectionView) { return; }
     if (self.cache.count > 0) { [self reset]; }
     
@@ -95,8 +88,7 @@
     CGFloat cellWidth = (totalWidthPerPage - self.cellGapH * (self.columns - 1)) / self.columns;
     CGFloat cellHeight = (CGRectGetHeight(self.collectionView.frame) - self.cellGapV * (self.rows + 1)) / self.rows;
     
-    for (NSInteger i = 0; i < totalData; i++)
-    {
+    for (NSInteger i = 0; i < totalData; i++) {
         /* All currentPage index, cellCol value and cellRow value starts from 0. */
         NSInteger currentPage = i / totalCellCountPerPage;
         NSInteger reminder = i % totalCellCountPerPage;
@@ -119,18 +111,15 @@
     self.contentWidth += (self.cellRemainWidth + self.cellGapH);
 }
 
-- (CGSize)collectionViewContentSize
-{
+- (CGSize)collectionViewContentSize {
     return CGSizeMake(self.contentWidth, self.contentHeight);
 }
 
-- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
-{
+- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSMutableArray<UICollectionViewLayoutAttributes *> *visibleAttributes = [NSMutableArray array];
     for (UICollectionViewLayoutAttributes *attribute in self.cache)
     {
-        if ( !CGRectIsNull(CGRectIntersection(attribute.frame, rect)) )
-        {
+        if ( !CGRectIsNull(CGRectIntersection(attribute.frame, rect)) ) {
             [visibleAttributes addObject:attribute];
         }
     }
@@ -138,23 +127,19 @@
     return visibleAttributes;
 }
 
-- (nullable UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (nullable UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [self.cache objectAtIndex:indexPath.item];
 }
 
-- (void)invalidateLayout
-{
+- (void)invalidateLayout {
     [super invalidateLayout];
     [self reset];
 }
 
 
 #pragma mark - lazy
-- (NSMutableArray<UICollectionViewLayoutAttributes *> *)cache
-{
-    if (!_cache)
-    {
+- (NSMutableArray<UICollectionViewLayoutAttributes *> *)cache {
+    if (!_cache) {
         _cache = [NSMutableArray array];
     }
     
@@ -163,40 +148,33 @@
 
 
 #pragma mark - public method
-- (CGPoint)scrollOffsetForProposedOffset:(CGPoint)offset withVelocity:(CGFloat)velocity;
-{
+- (CGPoint)scrollOffsetForProposedOffset:(CGPoint)offset withVelocity:(CGFloat)velocity {
+    
     CGFloat offsetX = offset.x - self.cellRemainWidth;
     CGFloat pageContentWidth = CGRectGetWidth(self.collectionView.frame) - self.cellGapH - 2 * self.cellRemainWidth;
     
     CGFloat overshoot = fmodf(offsetX, pageContentWidth);
     
     /* velocity is zero or overshoot less than a quoter of page width. */
-    if (velocity == 0 && overshoot < (pageContentWidth - self.cellGapH) * 0.25)
-    {
+    if (velocity == 0 && overshoot < (pageContentWidth - self.cellGapH) * 0.25) {
         offset.x -= overshoot;
         offset.x -= self.cellRemainWidth;
         return offset;
     }
     
-    if (velocity > 0)
-    {
-        if ((overshoot > (pageContentWidth - self.cellGapH) * 0.5) || velocity > 0.2)
-        {
+    if (velocity > 0) {
+        if ((overshoot > (pageContentWidth - self.cellGapH) * 0.5) || velocity > 0.2) {
             offset.x += (pageContentWidth - overshoot);
         }
-        else
-        {
+        else {
             offset.x -= overshoot;
         }
     }
-    else
-    {
-        if ((overshoot > (pageContentWidth - self.cellGapH) * 0.5) || velocity < -0.2)
-        {
+    else {
+        if ((overshoot > (pageContentWidth - self.cellGapH) * 0.5) || velocity < -0.2) {
             offset.x -= overshoot;
         }
-        else
-        {
+        else {
             offset.x += (pageContentWidth - overshoot);
         }
     }
@@ -208,8 +186,7 @@
 
 
 #pragma mark - private methods
-- (void)reset
-{
+- (void)reset {
     [self.cache removeAllObjects];
     self.contentWidth = 0;
     self.contentHeight = 0;
