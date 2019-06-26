@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F74E83DA22C3BD2600FD8BC2 /* Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = F74E83D922C3BD2600FD8BC2 /* Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F75BC1F622C3B7C00003A493 /* QKSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = F75BC1F222C3B7C00003A493 /* QKSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F75BC1F722C3B7C00003A493 /* QKSliderViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F75BC1F322C3B7C00003A493 /* QKSliderViewLayout.h */; };
 		F75BC1F822C3B7C00003A493 /* QKSliderViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F75BC1F422C3B7C00003A493 /* QKSliderViewLayout.m */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		F72DD35522C3B6C500DC8A64 /* QKSliderView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QKSliderView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74E83D622C3BC9500FD8BC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F74E83D922C3BD2600FD8BC2 /* Framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Framework.h; sourceTree = "<group>"; };
 		F75BC1F222C3B7C00003A493 /* QKSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKSliderView.h; sourceTree = "<group>"; };
 		F75BC1F322C3B7C00003A493 /* QKSliderViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKSliderViewLayout.h; sourceTree = "<group>"; };
 		F75BC1F422C3B7C00003A493 /* QKSliderViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKSliderViewLayout.m; sourceTree = "<group>"; };
@@ -35,6 +33,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F72515D322C3D59500E40B8D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F75BC1F222C3B7C00003A493 /* QKSliderView.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		F72DD34B22C3B6C400DC8A64 = {
 			isa = PBXGroup;
 			children = (
@@ -55,7 +61,7 @@
 		F72DD35722C3B6C500DC8A64 /* QKSliderView */ = {
 			isa = PBXGroup;
 			children = (
-				F75BC1F222C3B7C00003A493 /* QKSliderView.h */,
+				F72515D322C3D59500E40B8D /* include */,
 				F75BC1F522C3B7C00003A493 /* QKSliderView.m */,
 				F75BC1F322C3B7C00003A493 /* QKSliderViewLayout.h */,
 				F75BC1F422C3B7C00003A493 /* QKSliderViewLayout.m */,
@@ -66,7 +72,6 @@
 		F74E83D422C3BC2B00FD8BC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F74E83D922C3BD2600FD8BC2 /* Framework.h */,
 				F74E83D622C3BC9500FD8BC2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -80,7 +85,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F74E83DA22C3BD2600FD8BC2 /* Framework.h in Headers */,
 				F75BC1F622C3B7C00003A493 /* QKSliderView.h in Headers */,
 				F75BC1F722C3B7C00003A493 /* QKSliderViewLayout.h in Headers */,
 			);
@@ -297,7 +301,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "$(PROJECT_DIR)/Framework/module.modulemap";
+				MODULEMAP_FILE = "$(PROJECT_DIR)/QKSliderView/include/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.QKSliderView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -324,7 +328,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "$(PROJECT_DIR)/Framework/module.modulemap";
+				MODULEMAP_FILE = "$(PROJECT_DIR)/QKSliderView/include/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.QKSliderView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'QKSliderView/*.{h,m}'
-  s.public_header_files = 'QKSliderView/QKSliderView.h'
+  s.source_files = 'QKSliderView/*.{h,m}', 'QKSliderView/include/QKSliderView.h'
+  s.public_header_files = 'QKSliderView/include/QKSliderView.h'
 end
