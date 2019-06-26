@@ -9,9 +9,6 @@ let package = Package(
     targets: [
         .target(
             name: "QKSliderView",
-            dependencies: []),
-        .testTarget(
-            name: "Example",
-            dependencies: ["QKSliderView"]),
+            dependencies: [])
     ]
 )
