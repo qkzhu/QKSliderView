@@ -7,7 +7,7 @@
 //
 
 #import <objc/runtime.h>
-#import "QKSliderView.h"
+#import "QKSlider.h"
 #import "QKSliderViewLayout.h"
 
 @interface QKSliderView () <UICollectionViewDelegate>

@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F75BC1F622C3B7C00003A493 /* QKSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = F75BC1F222C3B7C00003A493 /* QKSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F75BC1F722C3B7C00003A493 /* QKSliderViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F75BC1F322C3B7C00003A493 /* QKSliderViewLayout.h */; };
 		F75BC1F822C3B7C00003A493 /* QKSliderViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F75BC1F422C3B7C00003A493 /* QKSliderViewLayout.m */; };
-		F75BC1F922C3B7C00003A493 /* QKSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F75BC1F522C3B7C00003A493 /* QKSliderView.m */; };
+		F7DD218122C43E8F00B11601 /* QKSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD217F22C43E8F00B11601 /* QKSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7DD218222C43E8F00B11601 /* QKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = F7DD218022C43E8F00B11601 /* QKSlider.m */; };
+		F7DD218422C43EAC00B11601 /* QKSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = F7DD218322C43EAC00B11601 /* QKSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F72DD35522C3B6C500DC8A64 /* QKSliderView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QKSliderView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74E83D622C3BC9500FD8BC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F75BC1F222C3B7C00003A493 /* QKSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKSliderView.h; sourceTree = "<group>"; };
 		F75BC1F322C3B7C00003A493 /* QKSliderViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKSliderViewLayout.h; sourceTree = "<group>"; };
 		F75BC1F422C3B7C00003A493 /* QKSliderViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKSliderViewLayout.m; sourceTree = "<group>"; };
-		F75BC1F522C3B7C00003A493 /* QKSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKSliderView.m; sourceTree = "<group>"; };
+		F7DD217F22C43E8F00B11601 /* QKSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKSlider.h; sourceTree = "<group>"; };
+		F7DD218022C43E8F00B11601 /* QKSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKSlider.m; sourceTree = "<group>"; };
+		F7DD218322C43EAC00B11601 /* QKSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKSliderView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +38,7 @@
 		F72515D322C3D59500E40B8D /* include */ = {
 			isa = PBXGroup;
 			children = (
-				F75BC1F222C3B7C00003A493 /* QKSliderView.h */,
+				F7DD218322C43EAC00B11601 /* QKSliderView.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -62,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				F72515D322C3D59500E40B8D /* include */,
-				F75BC1F522C3B7C00003A493 /* QKSliderView.m */,
+				F7DD217F22C43E8F00B11601 /* QKSlider.h */,
+				F7DD218022C43E8F00B11601 /* QKSlider.m */,
 				F75BC1F322C3B7C00003A493 /* QKSliderViewLayout.h */,
 				F75BC1F422C3B7C00003A493 /* QKSliderViewLayout.m */,
 			);
@@ -85,7 +88,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F75BC1F622C3B7C00003A493 /* QKSliderView.h in Headers */,
+				F7DD218422C43EAC00B11601 /* QKSliderView.h in Headers */,
+				F7DD218122C43E8F00B11601 /* QKSlider.h in Headers */,
 				F75BC1F722C3B7C00003A493 /* QKSliderViewLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,8 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DD218222C43E8F00B11601 /* QKSlider.m in Sources */,
 				F75BC1F822C3B7C00003A493 /* QKSliderViewLayout.m in Sources */,
-				F75BC1F922C3B7C00003A493 /* QKSliderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
