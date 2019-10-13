@@ -7,7 +7,7 @@
 [![中文 README](https://img.shields.io/badge/%E4%B8%AD%E6%96%87-README-blue.svg?style=flat)](README.zh-cn.md)
 
 ## Preview
-<img src="images/demo.gif" width="222" height="480"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/demo.gif" width="222" height="480"/>
 
 ## Example
 
@@ -26,9 +26,9 @@ pod 'QKSliderView'
 ### Using storyboard
 1. Drag a `UICollectionView` to storyboard.
 2. Open `Inspector panel`, change class to `QKSliderView`. 
-<img src="images/class.png"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/class.png"/>
 3. Open `Inspector panel`, update neccessary properties such as total number of rows, columns etc. 
-<img src="images/config.png"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/config.png"/>
 
 ### Programmatically
 ```Swift
@@ -39,7 +39,7 @@ self.view.addSubview(sliderView)
 ```
 
 ### Terms explanation
-<img src="images/explain.png" width="310" height="672"/>
+<img src="https://github.com/qkzhu/QKSliderView/blob/master/images/explain.png" width="310" height="672"/>
 
 ## Author
 

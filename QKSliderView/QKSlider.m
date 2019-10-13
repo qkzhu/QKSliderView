@@ -7,7 +7,7 @@
 //
 
 #import <objc/runtime.h>
-#import "QKSliderView.h"
+#import "QKSlider.h"
 #import "QKSliderViewLayout.h"
 
 @interface QKSliderView () <UICollectionViewDelegate>
@@ -18,28 +18,22 @@
 @implementation QKSliderView
 
 #pragma mark - life cycle
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    if (self = [super initWithCoder:aDecoder])
-    {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
         [self commonInit];
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame])
-    {
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         [self commonInit];
     }
     return self;
 }
 
-- (instancetype)init
-{
-    if (self = [super init])
-    {
+- (instancetype)init {
+    if (self = [super init]) {
         [self commonInit];
     }
     return self;
@@ -49,10 +43,8 @@
                      columnsPerPage:(NSInteger)columns
                            cellGapH:(CGFloat)gapH
                            cellGapV:(CGFloat)gapV
-                    cellRemainWidth:(CGFloat)remainWidth
-{
-    if (self = [super init])
-    {
+                    cellRemainWidth:(CGFloat)remainWidth {
+    if (self = [super init]) {
         self.rows = rows;
         self.columns = columns;
         self.cellGapH = gapH;
@@ -88,8 +80,7 @@
 
 
 #pragma mark - private helper
-- (void)commonInit
-{
+- (void)commonInit {
     self.collectionViewLayout = [[QKSliderViewLayout alloc] initWithNumOfRowsPerPage:self.rows
                                                               numberOfColumnsPerPage:self.columns
                                                                             cellGapH:self.cellGapH
@@ -102,8 +93,7 @@
     self.showsVerticalScrollIndicator = NO;
 }
 
-- (nullable QKSliderViewLayout *)getQKLayout
-{
+- (nullable QKSliderViewLayout *)getQKLayout {
     return [self.collectionViewLayout isKindOfClass:[QKSliderViewLayout class]] ? (QKSliderViewLayout *)self.collectionViewLayout : nil;
 }
 
@@ -111,8 +101,7 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
                      withVelocity:(CGPoint)velocity
-              targetContentOffset:(inout CGPoint *)targetContentOffset
-{
+              targetContentOffset:(inout CGPoint *)targetContentOffset {
     QKSliderViewLayout *layout = [self getQKLayout];
     if (layout){
         *targetContentOffset = [layout scrollOffsetForProposedOffset:(*targetContentOffset) withVelocity:velocity.x];
@@ -135,21 +124,17 @@
  
  Thus `respondsToSelector` will consider `scrollViewDidScroll has a responder before check forwardingDelegate`.
  */
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (self.forwardingDelegate && [self.forwardingDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
-    {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.forwardingDelegate && [self.forwardingDelegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
         [self.forwardingDelegate scrollViewDidScroll:scrollView];
     }
 }
 
 
 #pragma mark - delegate forwarding
-- (BOOL)respondsToSelector:(SEL)aSelector
-{
+- (BOOL)respondsToSelector:(SEL)aSelector {
     BOOL result = [super respondsToSelector:aSelector];
-    if (!result && self.forwardingDelegate)
-    {
+    if (!result && self.forwardingDelegate) {
         // only forwarding `UICollectionViewDelegate` related selector
         struct objc_method_description md = protocol_getMethodDescription(@protocol(UICollectionViewDelegate), aSelector, NO, YES);
         if (md.name != NULL) {
@@ -160,10 +145,8 @@
     return result;
 }
 
-- (id)forwardingTargetForSelector:(SEL)aSelector
-{
-    if (self.forwardingDelegate)
-    {
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    if (self.forwardingDelegate) {
         // only forwarding `UICollectionViewDelegate` related selector
         struct objc_method_description md = protocol_getMethodDescription(@protocol(UICollectionViewDelegate), aSelector, NO, YES);
         if (md.name != NULL) {
@@ -175,8 +158,7 @@
 }
 
 #pragma mark - public methods
-- (void)invalidateLayout
-{
+- (void)invalidateLayout {
     [[self getQKLayout] invalidateLayout];
 }
 

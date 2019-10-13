@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'QKSliderView'
-  s.version          = '0.1.1'
+  s.version          = '1.0.0'
   s.summary          = 'An UICollectionView that displays a small portion of previous and next page on the screen.'
 
   s.homepage         = 'https://github.com/qkzhu/QKSliderView'
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'QKSliderView/*.{h,m}'
-  s.public_header_files = 'QKSliderView/QKSliderView.h'
+  s.source_files = 'QKSliderView/*.{h,m}', 'QKSliderView/include/QKSliderView.h'
+  s.public_header_files = 'QKSliderView/include/QKSliderView.h'
 end

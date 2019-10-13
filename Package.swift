@@ -1,3 +1,4 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
@@ -9,9 +10,6 @@ let package = Package(
     targets: [
         .target(
             name: "QKSliderView",
-            dependencies: []),
-        .testTarget(
-            name: "Example",
-            dependencies: ["QKSliderView"]),
+            path: "QKSliderView")
     ]
 )
